@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    flex: 1;
+    text-align: center;
+}
+
+.header h2 {
+    flex: 2;
+    font-size: 22px;
+    margin: 0 20px;
+}
+
+.header img {
+    max-height: 100px;
+    width: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2px;
+    border-radius: 8px;
+}
+
+th, td {
+    border: 1px solid #1F4A74;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #FDD354;
+    width: 10%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.submit-btn, .download-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1F4A74;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #258FBF;
+}
+
+.hide-button {
+    display: none;
+}
