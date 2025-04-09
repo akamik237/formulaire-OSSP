@@ -139,10 +139,10 @@ function addRow() {
     const rowCount = table.rows.length + 1;
     const row = table.insertRow();
     row.innerHTML = `
-        <td><input type="text" name="investissement_${rowCount}" placeholder="Investissement ${rowCount}"></td>
-        <td><input type="number" name="montant_${rowCount}" placeholder="Montant ${rowCount}"></td>
-        <td><input type="date" name="annee_${rowCount}" placeholder="Année ${rowCount}"></td>
-        <td><button type="button" onclick="removeRow(this)">Supprimer</button></td>
+        <td><input type="text" name="investissement_${rowCount}" placeholder="Investissement/Investment ${rowCount}"></td>
+        <td><input type="number" name="montant_${rowCount}" placeholder="Montant/Amount ${rowCount}"></td>
+        <td><input type="date" name="annee_${rowCount}" placeholder="Année/Year ${rowCount}"></td>
+        <td><button type="button" onclick="removeRow(this)">Supprimer/Remove</button></td>
     `;
 }
 
