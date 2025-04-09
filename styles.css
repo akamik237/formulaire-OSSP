@@ -1,78 +1,283 @@
-body {
-    font-family: Arial, sans-serif;
+/* === Global Resets & Body === */
+*, *::before, *::after {
+    box-sizing: border-box; /* Apply box-sizing universally */
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default body margin */
+    padding: 20px; /* Add some overall padding */
+    background-color: #f8f9fa; /* Optional: Light background */
+    color: #333;
+}
+
+/* === Header === */
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Use space-between for better distribution */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd; /* Optional separator */
 }
 
 .logo-container {
-    flex: 1;
-    text-align: center;
+    flex: 0 1 auto; /* Don't grow, shrink if needed, base on auto size */
+    text-align: center; /* Keep text align for potential captions */
 }
 
 .header h2 {
-    flex: 2;
-    font-size: 22px;
+    flex: 1 1 auto; /* Allow grow/shrink */
+    font-size: 20px; /* Slightly adjusted size */
     margin: 0 20px;
+    color: #1F4A74; /* Use theme color */
 }
 
 .header img {
-    max-height: 100px;
+    max-height: 80px; /* Slightly reduced max height */
     width: auto;
+    vertical-align: middle; /* Align better if text is beside */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2px;
+/* === Form Container & General Layout === */
+#form-container {
+    background-color: #ffffff;
+    padding: 25px;
     border-radius: 8px;
-}
-
-th, td {
-    border: 1px solid #1F4A74;
-    padding: 15px;
-    text-align: left;
-}
-
-th {
-    background-color: #FDD354;
-    width: 10%;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.submit-btn, .download-btn {
-    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-button {
+/* === Table Styling === */
+#form-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Space below the main table */
+}
+
+#form-container th,
+#form-container td {
+    border: 1px solid #ccc; /* Lighter border */
+    padding: 12px 15px; /* Adjusted padding */
+    text-align: left;
+    vertical-align: top; /* Align content to the top, better for multi-line */
+}
+
+#form-container th {
+    /* background-color: #e9ecef; */ /* Previous lighter background */
+    background-color: #FFFACD; /* Restored Yellow Background (LemonChiffon) */
+    color: #1F4A74; /* Darker text for contrast */
+    font-weight: bold;
+    width: 25%; /* Increased width for labels */
+}
+
+/* === Form Element Styling (Scoped) === */
+#form-container input[type="text"],
+#form-container input[type="number"],
+#form-container input[type="date"],
+#form-container input[type="email"], /* Added email just in case */
+#form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#form-container input:focus,
+#form-container textarea:focus {
+    border-color: #1F4A74;
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(31, 74, 116, 0.25); /* Focus indicator */
+}
+
+#form-container textarea {
+    min-height: 80px; /* Give textareas a minimum height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Specific adjustments for inline/smaller inputs */
+#form-container input[name^="nombre_salaries"],
+#form-container input[name^="chiffre_affaires"],
+#form-container #investissementTable input[type="number"] { /* Target investment numbers */
+     width: auto; /* Let them size naturally */
+     min-width: 100px; /* Ensure a minimum width */
+     display: inline-block; /* Needed for auto width */
+     vertical-align: middle;
+}
+
+/* Checkbox/Label Styling */
+#form-container input[type="checkbox"] {
+    width: auto; /* Checkboxes shouldn't be 100% width */
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#form-container label {
+    display: inline-block; /* Allow margin/padding */
+    margin-right: 15px; /* Space out labels */
+    margin-bottom: 5px; /* Space below labels if they wrap */
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: normal; /* Ensure labels aren't bold like TH */
+}
+
+/* Container for checkbox groups */
+#form-container td > div[style*="flex-wrap"] {
+   padding-top: 5px; /* Add some space above checkboxes */
+}
+
+/* === Button Styling === */
+
+/* General Button Style (apply to specific buttons/classes) */
+.btn { /* Create a general button class */
+    display: inline-block; /* Correct display for padding/margin */
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
-    background-color: #1F4A74;
+    border-radius: 5px;
+    background-color: #1F4A74; /* Primary color */
     color: white;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    margin-top: 20px;
+    text-decoration: none; /* Remove underline if used on <a> tags */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    vertical-align: middle;
+    margin: 5px; /* Add small base margin */
 }
 
-button:hover {
-    background-color: #258FBF;
+.btn:hover {
+    background-color: #163552; /* Darker shade for hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.hide-button {
-    display: none;
+/* Specific Buttons */
+/* Apply the .btn class to buttons in HTML for these styles to take effect */
+/* Example: <button id="submitBtn" class="btn">...</button> */
+
+#submitBtn.btn { /* Style if #submitBtn ALSO has class="btn" */
+    background-color: #28a745; /* Green for primary submit */
+}
+#submitBtn.btn:hover {
+    background-color: #218838;
+}
+
+#langBtn.btn { /* Style if #langBtn ALSO has class="btn" */
+    background-color: #6c757d; /* Grey for secondary action */
+}
+#langBtn.btn:hover {
+    background-color: #5a6268;
+}
+
+#addInvestmentBtn.btn { /* Style if #addInvestmentBtn ALSO has class="btn" */
+     font-size: 14px; /* Slightly smaller */
+     padding: 8px 15px;
+     margin-top: 10px; /* Specific margin */
+     /* Keeps the primary blue unless overridden */
+}
+
+#form-container .remove-row-btn.btn { /* Style if .remove-row-btn ALSO has class="btn" */
+    background-color: #dc3545; /* Red for delete */
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0; /* Override default btn margin */
+}
+#form-container .remove-row-btn.btn:hover {
+    background-color: #c82333;
+}
+
+/* Container for Submit/Lang buttons */
+/* Ensure the div containing these buttons in form-structure.js has class="form-actions" */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Separator line */
+}
+
+/* === Validation/Error Styling === */
+/* Add class="input-error" via JS */
+#form-container input.input-error,
+#form-container textarea.input-error {
+    border-color: #dc3545 !important; /* Red border */
+    background-color: #fef3f4; /* Very light pink background */
+}
+
+/* Add class="group-error" via JS to the div containing checkboxes */
+#form-container div.group-error {
+    outline: 1px solid #dc3545;
+    padding: 5px; /* Add padding to make outline visible */
+    margin: -5px; /* Counteract padding shift */
+    border-radius: 4px;
+}
+
+/* === Responsive Adjustments (Optional Example) === */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack header items */
+        align-items: center;
+    }
+
+    .header h2 {
+        margin: 15px 0; /* Adjust margin */
+        font-size: 18px;
+    }
+
+    #form-container th,
+    #form-container td {
+        display: block; /* Stack table cells */
+        width: 100%;
+        border-bottom: none; /* Remove bottom border between stacked cells */
+    }
+
+    #form-container td {
+        border-top: none; /* Remove top border on data cells */
+        padding-top: 5px;
+        padding-bottom: 15px; /* Add space below stacked cell */
+    }
+
+     #form-container th {
+        border-bottom: 1px solid #ccc; /* Add border below header cell */
+        width: 100% !important; /* Override specific width */
+        background-color: #f8f9fa; /* Maybe change background for stacked view */
+        color: #333;
+        padding-bottom: 5px;
+    }
+
+    #form-container tr:last-child td:last-child {
+         border-bottom: 1px solid #ccc; /* Add border to very last cell */
+    }
+
+    /* Adjust inline inputs for stacking */
+    #form-container input[name^="nombre_salaries"],
+    #form-container input[name^="chiffre_affaires"],
+    #form-container #investissementTable input[type="number"] {
+        width: 100%; /* Full width when stacked */
+        margin-bottom: 10px; /* Add space below */
+    }
+    #form-container #investissementTable td {
+        padding-bottom: 5px; /* Reduce padding in investment table */
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch; /* Make buttons full width */
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+    .form-actions .btn:last-child {
+        margin-bottom: 0;
+    }
 }

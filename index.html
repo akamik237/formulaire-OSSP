@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
-<body id="contactForm">
+<body id="contactFormBody"> <!-- Changed ID slightly to avoid conflict with form ID -->
     <div class="header">
         <div class="logo-container">
             <img src="La Regionale bank logo.jpeg" alt="La Regionale Bank Logo" height="100">
@@ -24,13 +24,18 @@
     </div>
 
     <div style="text-align: left; padding: 10px;">
-        <button onclick="switchLanguage()" id="langBtn">Switch to English Version</button>
+        <h3><span data-key="guide">Remplir les champs, telecharger et joindre le fichier à la fenetre mail</span></h3> 
     </div>
 
     <!-- Contenu du formulaire -->
-    <div id="form-container"></div>
+    <div id="form-container">
+        <!-- Form HTML will be injected here by form-structure.js -->
+    </div>
 
-    <!-- Scripts -->
-    <script src="form.js"></script>
+    <!-- Scripts --->
+    <script src="translations.js"></script>
+    <script src="form.js"></script> <!-- Structure first -->
+    <script src="form-logic.js"></script>   <!-- Logic second -->
+
 </body>
 </html>
