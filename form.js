@@ -3,7 +3,7 @@ document.getElementById("form-container").innerHTML = `
         </tr>
         <table>
             <th><span data-key="company_name">Nom de l’Entreprise</span></th>
-            <td><input type="text" name="nom_entreprise" placeholder="Entrez le nom de l'entreprise" required></td>
+            <td><input type="text" name="nom_entreprise" placeholder="Nom de l'entreprise/ Name of the company" required></td>
             </tr>
             <tr>
                 <th><span data-key="legal_form">Forme juridique</span></th>
@@ -13,23 +13,23 @@ document.getElementById("form-container").innerHTML = `
                 <th><span data-key="sector_activity">Secteur d’activité</span></th>
                 <td>
                     <div style="display: flex; gap: 20px;">
-                        <label><input type="checkbox" name="secteur[]" value="Agriculture"> Agriculture</label>
-                        <label><input type="checkbox" name="secteur[]" value="Élevage"> Élevage</label>
-                        <label><input type="checkbox" name="secteur[]" value="Pêche & Aquaculture"> Pêche &Aquaculture</label>
-                        <label><input type="checkbox" name="secteur[]" value="Agroalimentaire"> Agroalimentaire</label>
-                        <label><input type="checkbox" name="secteur[]" value="Bois"> Bois</label>
-                        <label><input type="checkbox" name="secteur[]" value="Numérique"> Numérique</label>
+                        <label><input type="checkbox" name="secteur[]" value="Agriculture">Agriculture</label>
+                        <label><input type="checkbox" name="secteur[]" value="Élevage">Élevage/Livestock</label>
+                        <label><input type="checkbox" name="secteur[]" value="Pêche & Aquaculture">Pêche &Aquaculture/Fishing and Aquaculture</label>
+                        <label><input type="checkbox" name="secteur[]" value="Agroalimentaire">Agroalimentaire/Agrofood</label>
+                        <label><input type="checkbox" name="secteur[]" value="Bois">Bois/Wood</label>
+                        <label><input type="checkbox" name="secteur[]" value="Numérique"> Numérique/Digital</label>
                     </div>
                 </td>
             </tr>
 
             <tr>
                 <th><span data-key="main_activity">Activité principale</span></th>
-                <td><input type="text" name="activite_principale" placeholder="Décrivez votre activité principale"required></td>
+                <td><input type="text" name="activite_principale" placeholder="Votre activité principale/Your Main activities"required></td>
             </tr>
             <tr>
-                <th><span data-key="headquarters">Siège social / Zone d’activités</span></th>
-                <td><input type="text" name="siege_social" placeholder="Adresse du siège social" required></td>
+                <th><span data-key="headquarters">Siège social/Zone d’activités</span></th>
+                <td><input type="text" name="siege_social" placeholder="Adresse du siège social/Your headquaters" required></td>
             </tr>
             <tr>
                 <th><span data-key="creation_date">Date de création</span></th>
@@ -37,7 +37,7 @@ document.getElementById("form-container").innerHTML = `
             </tr>
             <tr>
                 <th><span data-key="contact_address">Adresse / Contact</span></th>
-                <td><input type="text" name="adresse_contact" placeholder="Adresse ou numéro de contact" required></td>
+                <td><input type="text" name="adresse_contact" placeholder="Adresse/Contact" required></td>
             <tr>
                 <th><span data-key="number_of_employees">Nombre de salariés</span></th>
                 <td>
@@ -47,7 +47,7 @@ document.getElementById("form-container").innerHTML = `
                             <input type="number" name="nombre_salaries_permanent" placeholder="01, 2, 3, ..." required>
                         </div>
                         <div>
-                            <label>Temporaires :</label>
+                            <label>Temporaires/Temporary :</label>
                             <input type="number" name="nombre_salaries_temporaire" placeholder="01, 2, 3, ..." required>
                         </div>
                     </div>
@@ -59,24 +59,22 @@ document.getElementById("form-container").innerHTML = `
                     <div style="display: flex; gap: 20px;">
                         <div>
                             <label>2022 :</label>
-                            <input type="number" name="chiffre_affaires_2022" placeholder="Chiffre d'affaires 2022"
-                                required>
+                            <input type="number" name="chiffre_affaires_2022" placeholder="Chiffre d'affaires/Revenue 2022"required>
                         </div>
                         <div>
                             <label>2023 :</label>
-                            <input type="number" name="chiffre_affaires_2023" placeholder="Chiffre d'affaires 2023"
-                                required>
+                            <input type="number" name="chiffre_affaires_2023" placeholder="Chiffre d'affaires/Revenue 2023"required>
                         </div>
                         <div>
                             <label>2024 :</label>
-                            <input type="number" name="chiffre_affaires_2024" placeholder="Chiffre d'affaires 2024"
+                            <input type="number" name="chiffre_affaires_2024" placeholder="Chiffre d'affaires/Revenue 2024"
                                 required>
                         </div>
                     </div>
                 </td>
             </tr>
             <th><span data-key="partner">Banques partenaires actuelles</span></th>
-            <td><input type="text" name="banques_partenaires" placeholder="Nom des banques partenaires" required>
+            <td><input type="text" name="banques_partenaires" placeholder="Banques partenaires/Banking partners" required>
             </td>
             </tr>
             <tr>
@@ -85,47 +83,47 @@ document.getElementById("form-container").innerHTML = `
                     <table id="investissementTable">
                         <thead>
                             <tr>
-                                <th>Désignation des investissements</th>
-                                <th>Montant (F CFA)</th>
-                                <th>Année d’acquisition</th>
-                                <th>Action</th>
+                                <th>Désignation des investissements/Investment description</th>
+                                <th>Montant/Amount (F CFA)</th>
+                                <th>Année d’acquisition/Acquisition year</th>
+                                <th>Action/</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" name="investissement_1" placeholder="Investissement 1"></td>
-                                <td><input type="number" name="montant_1" placeholder="Montant 1"></td>
-                                <td><input type="date" name="annee_1" placeholder="Année 1"></td>
-                                <td><button type="button" onclick="removeRow(this)">Supprimer</button></td>
+                                <td><input type="text" name="investissement_1" placeholder="Investissement/Investment 1"></td>
+                                <td><input type="number" name="montant_1" placeholder="Montant/Amount 1"></td>
+                                <td><input type="date" name="annee_1" placeholder="Année/Year 1"></td>
+                                <td><button type="button" onclick="removeRow(this)">Supprimer/Remove</button></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="submit-btn">
-                        <button type="button" onclick="addRow()">Ajouter un investissement</button>
+                        <button type="button" onclick="addRow()">Ajouter un investissement/Add Investment</button>
                     </div>
                 </td>
             </tr>
             <tr>
                 <th><span data-key="presentation_sector">Présentation du secteur d’activité et des contraintes<span></th>
-                <td><textarea name="presentation_secteur" placeholder="Décrivez le secteur et ses contraintes"
+                <td><textarea name="presentation_secteur" placeholder="Décrivez le secteur et ses contraintes/Describe the sector and its constraints"
                  required></textarea></td>
             </tr>
             <tr>
                 <th><span data-key="justification">Justification du besoin<span></th>
-                <td><textarea name="justification_besoin" placeholder="Expliquez le besoin" required></textarea></td>
+                <td><textarea name="justification_besoin" placeholder="Expliquez le besoin/Explain the need" required></textarea></td>
             </tr>
             <tr>
                 <th><span data-key="presentation_customer">Présentation du portefeuille clients<span></th>
-                <td><textarea name="presentation_clients" placeholder="Décrivez votre portefeuille clients" required></textarea></td>
+                <td><textarea name="presentation_clients" placeholder="Décrivez votre portefeuille clients/Customers portfolio" required></textarea></td>
             </tr>
             <tr>
                 <th><span data-key="presentation_supply">Présentation du portefeuille fournisseurs <span></th>
-                <td><textarea name="presentation_fournisseurs" placeholder="Décrivez votre portefeuille fournisseurs" required></textarea></td>
+                <td><textarea name="presentation_fournisseurs" placeholder="Décrivez votre portefeuille fournisseurs/Suppliers portfolio" required></textarea></td>
             </tr>
             <tr>
                 <th><span data-key="comments">Commentaires<span> </th>
-                <td><textarea name="commentaires" placeholder="D'autres remarques ou commentaires"></textarea></td>
+                <td><textarea name="commentaires" placeholder="D'autres remarques/Other remarks"></textarea></td>
             </tr>
         </table>
     </form>
@@ -242,5 +240,5 @@ function switchLanguage() {
         const key = el.getAttribute('data-key');
         el.textContent = translations[currentLang][key] || el.textContent;
     });
-    document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'English' : 'Français';
+    document.getElementById('langBtn').textContent = currentLang === 'fr' ? 'Switch to english version' : 'Utiliser la version Française';
 }
